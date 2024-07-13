@@ -37,3 +37,27 @@ GraphQLサービスが正しく設定されたエンドポイントで実行さ�
 
 - Express: Webサーバー上でVoyagerツールを提供します。
 - GraphQL Voyager: GraphQLスキーマのインタラクティブな視覚化を提供します。
+
+
+## Dockerを使用したセットアップ
+
+このプロジェクトはDockerを使用して簡単にセットアップすることができます。以下の手順に従ってください。
+
+### Dockerイメージのビルド
+
+プロジェクトのルートディレクトリで以下のコマンドを実行し、Dockerイメージをビルドします。
+
+```bash
+docker build -t voyager-for-local .
+```
+
+### Dockerコンテナの実行
+
+ビルドしたイメージからDockerコンテナを実行します。
+
+```bash
+docker run -d --name voyager -p 3000:3000 voyager-for-local
+```
+
+これで、`http://localhost:3000` でアプリケーションにアクセスできます。
+
